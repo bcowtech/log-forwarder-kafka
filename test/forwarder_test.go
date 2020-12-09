@@ -17,6 +17,15 @@ func TestForwarder(t *testing.T) {
 		Topics:            []string{"myTopic"},
 		ShutdownTimeoutMs: int(15 * time.Second),
 		ConfigMap: &kafka.ConfigMap{
+			/*
+			 * you may add the following config:
+			 *  bootstrap.servers
+			 *  enable.idempotence
+			 *  message.send.max.retries
+			 *  partitioner
+			 *  compression.type
+			 *  security.protocol
+			 */
 			"client.id":                "demo",
 			"bootstrap.servers":        BootstrapServers,
 			"enable.idempotence":       "true",

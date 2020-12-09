@@ -20,13 +20,6 @@ type Forwarder struct {
 }
 
 func NewForwarder(opt *Option) *Forwarder {
-	// bootstrap.servers
-	// enable.idempotence
-	// message.send.max.retries
-	// partitioner
-	// compression.type
-	// security.protocol
-
 	p, err := kafka.NewProducer(opt.ConfigMap)
 	if err != nil {
 		panic(err)
@@ -90,6 +83,13 @@ func (f *Forwarder) listenEvents() {
 							ev.TopicPartition.Error)
 					}
 				}
+			case kafka.Error:
+				f.logger.Printf("{Code:%d IsFatal:%t IsRetriable:%t TxnRequiresAbort:%t}: %v\n",
+					ev.Code(),
+					ev.IsFatal(),
+					ev.IsRetriable(),
+					ev.TxnRequiresAbort(),
+					ev.Error())
 			}
 		}
 	}()
