@@ -25,6 +25,7 @@ func TestForwarder(t *testing.T) {
 			 *  partitioner
 			 *  compression.type
 			 *  security.protocol
+			 *  request.required.acks   ; must greater than min.insync.replicas
 			 */
 			"client.id":                "demo",
 			"bootstrap.servers":        BootstrapServers,
