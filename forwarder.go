@@ -55,7 +55,12 @@ func (f *Forwarder) Close() {
 	p := f.producer
 
 	defer p.Close()
+}
 
+func (f *Forwarder) Runner() *Runner {
+	return &Runner{
+		forwarder: f,
+	}
 }
 
 func (f *Forwarder) listenEvents() {
