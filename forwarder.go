@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	defaultLogger = log.New(os.Stdout, "[bcow-go/log-forwarder-kafka]", log.LstdFlags|log.Lmicroseconds|log.Llongfile|log.Lmsgprefix)
+	defaultLogger = log.New(os.Stdout, "[bcowtech/log-forwarder-kafka]", log.LstdFlags|log.Lmicroseconds|log.Llongfile|log.Lmsgprefix)
 )
 
 type Forwarder struct {

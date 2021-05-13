@@ -4,8 +4,8 @@ import (
 	"testing"
 	"time"
 
-	"gitlab.bcowtech.de/bcow-go/log"
-	kafka "gitlab.bcowtech.de/bcow-go/log-forwarder-kafka"
+	"github.com/bcowtech/log"
+	kafka "github.com/bcowtech/log-forwarder-kafka"
 )
 
 func TestLog(t *testing.T) {

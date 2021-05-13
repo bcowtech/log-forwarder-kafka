@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	kafka "gitlab.bcowtech.de/bcow-go/log-forwarder-kafka"
+	kafka "github.com/bcowtech/log-forwarder-kafka"
 )
 
 var (
